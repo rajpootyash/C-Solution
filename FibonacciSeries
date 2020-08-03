@@ -1,0 +1,43 @@
+/*
+		What is Fibonacci Series.
+    
+		The Fibonacci Series, commanly denoted F[n],form a sequence,called the Fibonacci sequence,such that each number is sum of two preceding ones,starting from 0 to 1.That is, 
+		F[0]=0,F[1]=1 and F[n]=F[n-1]+F[n-2] for n>1.
+		
+    The begining of sequence is thus
+			0,1,1,2,3,5,8,13,21,34,55,89,144,...
+
+	|_______________________________________________________________________________________|
+	|		|__ALGORITHM__|				                                    													|
+	|		Step 1. Create an Array F[0...n] this depends upon memory management      O(n)     	|
+	|		Step 2.																			                                        |
+	|				F[0]<-0															                                  O(1)      |
+	|				F[1]<-1															                                  O(1)      |
+	|		Step 3.																	                                            |
+	|				for i from 2 to n												                              O(n)      |
+	|					F[i]=F[i-1]+F[i-2]											                            O(n)      | 	
+	|				return F[n]														                                O(1)	    |
+	|	Total: O(n)+O(1)+O(1)+O(n).O(n)+O(1)=O(n^2)											                      |
+	|						            |_______|														                            |
+	|						                |															                              |
+	|						          Dominating term													                          |
+	|_______________________________________________________________________________________|
+
+
+	Fibonacci Series using Array */
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	long long a[100]={0,1},n;
+	//it holds 92 values means 19 place value with correct answer.
+	cin>>n;
+	cout<<a[0]<<" "<<a[1]<<" ";
+	for (int i=2;i<=n;i++)
+	{
+		a[i]=a[i-1]+a[i-2];
+		cout<<"Fib["<<i<<"]="<<a[i]<<endl;
+	}
+	return 0;	
+}
